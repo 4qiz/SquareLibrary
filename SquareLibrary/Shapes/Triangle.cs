@@ -26,21 +26,21 @@ namespace SquareLibrary.Shapes
 
         private double CalculateTriangleArea(double sideA, double sideB, double sideC)
         {
-            double p = (_sideA + _sideB + _sideC) / 2;
-            return Math.Sqrt(p * (p - _sideA) * (p - _sideB) * (p - _sideC));
+            double p = (sideA + sideB + sideC) / 2;
+            return Math.Sqrt(p * (p - sideA) * (p - sideB) * (p - sideC));
         }
 
         private double CalculateRightAngledTriandleArea(double sideA, double sideB, double sideC)
         {
-            double h = (Math.Pow(_sideC, 2) - Math.Pow(_sideA, 2)) / (2 * _sideA);
-            return _sideA * h / 2;
+            double h = (Math.Pow(sideC, 2) - Math.Pow(sideA, 2)) / (2 * sideA);
+            return sideA * h / 2;
         }
 
-        public bool IsRightAngled(double a, double b, double c)
+        public bool IsRightAngled(double sideA, double sideB, double sideC)
         {
-            return (a * a + b * b == c * c) ||
-                   (a * a + c * c == b * b) ||
-                   (b * b + c * c == a * a);
+            return (sideA * sideA + sideB * sideB == sideC * sideC) ||
+                   (sideA * sideA + sideC * sideC == sideB * sideB) ||
+                   (sideB * sideB + sideC * sideC == sideA * sideA);
         }
     }
 }
